@@ -1,0 +1,32 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# Bibliography
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Latexmk
+latexmkrc
+
+# Temporary / backup files
+*.tmp
+*.bak
+*.swp
+*.~*
+*~
+
+# PDF output (optional — see note below)
+*.pdf
