@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+
+% -------------------- Packages --------------------
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+
+% -------------------- Formatting --------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\titleformat{\section}
+  {\normalsize\bfseries}
+  {}
+  {0em}
+  {}[\titlerule]
+
+\renewcommand{\labelitemi}{\textbullet}
+
+\newcommand{\resumeItem}[1]{
+  \item {\small #1}
+}
+
+\newcommand{\resumeSubheadingNoTitle}[3]{
+  \textbf{#1} \hfill #2 \\
+  \textit{#3}
+}
+
+\newcommand{\resumeArea}[1]{
+  \vspace{4pt}
+  {\small #1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \textbf{#1} \hfill #2 \\
+  {\small\textit{#3}} \hfill {\small\textit{#4}}
+}
+
+\newcommand{\resumeEduSubheading}[4]{
+  \textbf{#1} \hfill #2 \\
+  {\small{#3}} \hfill {\small\textit{#4}}
+}
+
+\newcommand{\resumeExpSubheading}[4]{
+  \textbf{#1} \hfill #2 \\
+  {\normalsize\textit{#3}} \hfill {\normalsize\textit{#4}}
+}
+
+
+\newenvironment{resumeItemList}{
+  \begin{itemize}[
+    leftmargin=0.15in,
+    itemsep=1pt,
+    topsep=3pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+}{
+  \end{itemize}
+  \vspace{-2pt}
+}
+
+% -------------------- Document --------------------
+\begin{document}
+
+% -------------------- Header --------------------
+\begin{center}
+    {\Large \textbf{Alonso Bautista Martin}} \\[4pt]
+    Atlanta, GA 30308 \,|\, (909) 964-6315 \,|\, 
+    \href{mailto:alonsobautistamart@gmail.com}{alonsobautistamart@gmail.com} \,|\, 
+    \href{https://www.linkedin.com/in/alonso-bautista-martin}{linkedin.com/in/alonso-bautista-martin}
+\end{center}
+
+% -------------------- Education --------------------
+\section{Education}
+
+\resumeEduSubheading
+{Georgia Institute of Technology}{Atlanta, GA}
+{M.S. in Operations Research, GPA: 4.0}{December 2022}
+
+\resumeEduSubheading
+{California State Polytechnic University (Cal Poly), Pomona}{Pomona, CA}
+{B.S. in Industrial Engineering \& Minor in Mathematics, GPA: 3.82 (Summa Cum Laude)}{May 2021}
+
+% -------------------- Professional Experience --------------------
+\section{Professional Experience}
+
+\resumeExpSubheading
+{Veritiv}{Sandy Springs, GA}
+{Supply Chain Analyst II}{February 2023 -- Present}
+
+\resumeArea{Network Optimization \& Simulation}
+\begin{resumeItemList}
+  \resumeItem{Implemented a large-scale supply chain network simulation and optimization platform (approximately 100 distribution centers) to evaluate customer-to-DC assignments, capacity utilization, cost tradeoffs, and what-if scenarios across Veritiv’s U.S. distribution network.}
+  \resumeItem{Developed and executed large-scale simulations and optimization runs on AWS EC2, enabling long-running, reproducible experiments.}
+  \resumeItem{Built Mixed-Integer Linear Programming (MILP) models using PuLP and Gurobi to optimize warehouse footprint, expansion decisions, and new DC creation under service and capacity constraints.}
+  \resumeItem{Translated complex business rules into production-ready mathematical formulations, including warehouse overutilization, private fleet vs.\ third-party transportation costs, and market vs.\ current cost rates.}
+  \resumeItem{Enabled scenario-based planning for supply chain leadership, supporting strategic decisions around growth, consolidation, and cost reduction.}
+  \resumeItem{Integrated newly acquired operations into Veritiv’s core network model without dependency on upstream data engineering teams.}
+  \resumeItem{Played a central role in Veritiv’s enterprise-wide network redesign initiative.}
+\end{resumeItemList}
+
+\resumeArea{Revenue Operations -- Machine Learning}
+\begin{resumeItemList}
+  \resumeItem{Developed an implicit sales recommendation system to identify cross-sell and upsell opportunities at the customer level.}
+  \resumeItem{Built XGBoost models to predict product category-level sales potential for each customer, quantifying revenue opportunity across the portfolio.}
+  \resumeItem{Modeled potential sales for new customer sites to support market expansion planning.}
+  \resumeItem{Applied name-matching techniques using Generative AI and embeddings to map new-site data with existing customer records.}
+  \resumeItem{Created a customer classification framework based on predicted potential, validated and adopted by sales leadership.}
+  \resumeItem{Served as a core input to Veritiv’s sales rep-to-customer assignment strategy.}
+\end{resumeItemList}
+
+\resumeArea{Sales Forecasting with AI}
+\begin{resumeItemList}
+  \resumeItem{Developed a sales forecasting model predicting monthly sales across product segments with MAPE below 3\%.}
+  \resumeItem{Produced the company’s annual sales forecast used for budget planning with granularity down to the customer industry level.}
+  \resumeItem{Designed a price index methodology to decompose revenue into price and volume effects.}
+  \resumeItem{Introduced a volume metric isolating true demand trends from price-driven growth.}
+\end{resumeItemList}
+
+\resumeArea{Data Analysis \& Business Intelligence}
+\begin{resumeItemList}
+  \resumeItem{Conducted statistical analyses, including difference-in-differences, to measure the impact of strategic business programs.}
+  \resumeItem{Built self-service Power BI sales tools adopted by sales leadership for revenue tracking.}
+  \resumeItem{Developed SQL stored procedures and Power BI dashboards to monitor transportation operations, now used daily across the organization.}
+\end{resumeItemList}
+
+\resumeArea{Production-Grade Data Pipelines}
+\begin{resumeItemList}
+  \resumeItem{Implemented reproducible pipelines using Kedro and custom frameworks, transforming Jupyter notebooks into production-grade systems.}
+  \resumeItem{Built robust test suites with pytest, achieving approximately 70\% code coverage.}
+  \resumeItem{Version-controlled and productionized workflows using GitHub and Azure DevOps.}
+  \resumeItem{Orchestrated end-to-end workflows using AWS Step Functions, Glue, Lambda, ECR, and SageMaker.}
+  \resumeItem{Designed S3-backed data layers and Redshift tables for scalable analytical pipelines.}
+  \resumeItem{Built parameterized, environment-agnostic pipelines supporting rapid experimentation and enterprise deployment.}
+\end{resumeItemList}
+
+\resumeArea{Leadership \& Communication}
+\begin{resumeItemList}
+  \resumeItem{Presented complex mathematical models to senior leadership, translating results into actionable business tradeoffs.}
+  \resumeItem{Mentored summer interns in data science projects, culminating in presentations to senior leadership.}
+  \resumeItem{Leveraged multilingual proficiency to support coordination between Veritiv U.S.\ and Veritiv Mexico teams.}
+  \resumeItem{Collaborated with cross-functional teams and external consultants, including McKinsey QuantumBlack.}
+\end{resumeItemList}
+
+\resumeExpSubheading
+{Georgia Institute of Technology}{Atlanta, GA}
+{Graduate Teaching Assistant, Advanced Engineering Economy}{Fall 2022}
+
+\begin{resumeItemList}
+  \resumeItem{Mentored over 40 graduate students in financial mathematics and economic decision-making.}
+  \resumeItem{Recognized with the \textit{Golden Standard Teaching Assistant Award} for teaching excellence.}
+\end{resumeItemList}
+
+\resumeExpSubheading
+{Reonic GmbH}{Augsburg, Bavaria}
+{Data Science and Web Development Intern}{Summer 2022}
+
+\begin{resumeItemList}
+  \resumeItem{Developed algorithms to download solar panel sensor metrics using the Deutscher Wetterdienst (DWD) API.}
+  \resumeItem{Processed large-scale solar datasets using Pandas and NumPy; created visualizations with Matplotlib.}
+  \resumeItem{Detected solar radiation patterns to support business evaluations.}
+\end{resumeItemList}
+
+% -------------------- Skills --------------------
+\section{Skills}
+
+{\small
+\textbf{Programming:} Python (Kedro), SQL, R, C, C++, HTML/CSS, CUDA, MATLAB, Visual Basic, JavaScript \\[-1pt]
+\textbf{Tools \& Frameworks:} Git, GitHub, Jupyter Notebooks, LaTeX, Visual Studio Code, Arduino \\[-1pt]
+\textbf{Cloud \& OS:} AWS, Azure DevOps, Linux (Ubuntu/Unix), Windows, iOS, Android \\[-1pt]
+\textbf{Data \& Engineering Software:} Power BI, Tableau, Excel, SolidWorks, ProModel, MS Access \\[-1pt]
+\textbf{Certifications:} Six Sigma Green Belt (2021) \\[-1pt]
+\textbf{Languages:} English (Fluent), Spanish (Native), French (Intermediate) \\[-1pt]
+\textbf{Awards:} Georgia Institute of Technology Golden Standard Teaching Assistant Award (2022), Cal Poly Industrial Engineering Department Scholarship (2020), Cal Poly International Student Award (2017)
+}
+
+\end{document}
